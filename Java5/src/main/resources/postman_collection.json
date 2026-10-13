@@ -1,0 +1,432 @@
+{
+  "info": {
+    "_postman_id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+    "name": "Tic-Tac-Toe API (JWT)",
+    "description": "Postman collection for Tic-Tac-Toe API with JWT authentication.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"login\": \"testuser\",\n    \"password\": \"testpassword\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"login\": \"testuser\",\n    \"password\": \"testpassword\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh Access Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"refreshToken\": \"{{refreshToken}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/refresh",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "refresh"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"refreshToken\": \"{{refreshToken}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/refresh-token",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Info by Token",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/auth/user-info",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "user-info"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Game",
+      "item": [
+        {
+          "name": "Create vs Computer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/game/vs-computer",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "game",
+                "vs-computer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create vs Human",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/game/vs-human",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "game",
+                "vs-human"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Waiting Games",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/game/waiting",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "game",
+                "waiting"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Join Game",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/game/{{gameId}}/join",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "game",
+                "{{gameId}}",
+                "join"
+              ],
+              "variable": [
+                {
+                  "key": "gameId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Current Game",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/game/{{gameId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "game",
+                "{{gameId}}"
+              ],
+              "variable": [
+                {
+                  "key": "gameId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Make Move",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"row\": 0,\n    \"col\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/game/{{gameId}}/move",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "game",
+                "{{gameId}}",
+                "move"
+              ],
+              "variable": [
+                {
+                  "key": "gameId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Game History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/game/history",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "game",
+                "history"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Leaderboard",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/game/leaderboard/{{n}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "game",
+                "leaderboard",
+                "{{n}}"
+              ],
+              "variable": [
+                {
+                  "key": "n",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/{{userId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "{{userId}}"
+              ],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Current User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/current",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user",
+                "current"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{accessToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "if (pm.request.url.path.includes('login') && pm.response.code === 200) {",
+          "    var jsonData = pm.response.json();",
+          "    if (jsonData.accessToken) pm.collectionVariables.set('accessToken', jsonData.accessToken);",
+          "    if (jsonData.refreshToken) pm.collectionVariables.set('refreshToken', jsonData.refreshToken);",
+          "}",
+          "if (pm.request.url.path.includes('refresh') && pm.response.code === 200) {",
+          "    var jsonData = pm.response.json();",
+          "    if (jsonData.accessToken) pm.collectionVariables.set('accessToken', jsonData.accessToken);",
+          "}",
+          "if (pm.request.url.path.includes('refresh-token') && pm.response.code === 200) {",
+          "    var jsonData = pm.response.json();",
+          "    if (jsonData.refreshToken) pm.collectionVariables.set('refreshToken', jsonData.refreshToken);",
+          "}"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "accessToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "refreshToken",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

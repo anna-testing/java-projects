@@ -1,0 +1,15 @@
+.DS_Store
+.idea/
+.vscode/
+.gradle/
+**/build/
+**/out/
+**/bin/
+*.iml
+*.class
+*.log
+.env
+.env.*
+*.jks
+*.keystore
+keystore.properties
